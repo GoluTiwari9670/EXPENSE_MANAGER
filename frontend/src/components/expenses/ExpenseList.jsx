@@ -112,7 +112,7 @@ const ExpenseList = () => {
               <SelectValue placeholder="All categories" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Categories</SelectItem>
+              <SelectItem value="all">All Categories</SelectItem>
               {mockCategories.map((category) => (
                 <SelectItem key={category.id} value={category.id}>
                   <div className="flex items-center space-x-2">
