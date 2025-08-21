@@ -214,8 +214,20 @@ const Dashboard = () => {
               }`}
                 onClick={() => navigate(action.path)}
               >
-                <Icon size={20} className={`text-${action.color}-600`} />
-                <span className={`text-sm font-medium text-${action.color}-700`}>{action.label}</span>
+                <Icon size={20} className={`${
+                  action.color === "emerald" ? "text-emerald-600" :
+                  action.color === "blue" ? "text-blue-600" :
+                  action.color === "purple" ? "text-purple-600" :
+                  action.color === "orange" ? "text-orange-600" :
+                  "text-slate-600"
+                }`} />
+                <span className={`text-sm font-medium ${
+                  action.color === "emerald" ? "text-emerald-700" :
+                  action.color === "blue" ? "text-blue-700" :
+                  action.color === "purple" ? "text-purple-700" :
+                  action.color === "orange" ? "text-orange-700" :
+                  "text-slate-700"
+                }`}>{action.label}</span>
               </Button>
             );
           })}
