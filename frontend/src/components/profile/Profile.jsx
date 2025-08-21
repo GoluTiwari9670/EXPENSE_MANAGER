@@ -50,7 +50,13 @@ const Profile = () => {
 
   const StatCard = ({ icon: Icon, label, value, color = "emerald" }) => (
     <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-0 shadow-md bg-white/80 backdrop-blur-sm">
-      <div className={`w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-r from-${color}-500 to-${color}-600 flex items-center justify-center`}>
+      <div className={`w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center ${
+        color === "emerald" ? "bg-gradient-to-r from-emerald-500 to-emerald-600" :
+        color === "blue" ? "bg-gradient-to-r from-blue-500 to-blue-600" :
+        color === "purple" ? "bg-gradient-to-r from-purple-500 to-purple-600" :
+        color === "orange" ? "bg-gradient-to-r from-orange-500 to-orange-600" :
+        "bg-gradient-to-r from-slate-500 to-slate-600"
+      }`}>
         <Icon size={24} className="text-white" />
       </div>
       <p className="text-sm font-medium text-slate-600 mb-1">{label}</p>
