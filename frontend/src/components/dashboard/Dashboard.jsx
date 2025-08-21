@@ -205,7 +205,13 @@ const Dashboard = () => {
               <Button
                 key={action.path}
                 variant="outline"
-                className={`h-16 flex-col space-y-2 bg-white/60 backdrop-blur-sm border-${action.color}-200 hover:bg-${action.color}-50 hover:border-${action.color}-300 transition-all duration-300`}
+                className={`h-16 flex-col space-y-2 bg-white/60 backdrop-blur-sm transition-all duration-300 ${
+                action.color === "emerald" ? "border-emerald-200 hover:bg-emerald-50 hover:border-emerald-300" :
+                action.color === "blue" ? "border-blue-200 hover:bg-blue-50 hover:border-blue-300" :
+                action.color === "purple" ? "border-purple-200 hover:bg-purple-50 hover:border-purple-300" :
+                action.color === "orange" ? "border-orange-200 hover:bg-orange-50 hover:border-orange-300" :
+                "border-slate-200 hover:bg-slate-50 hover:border-slate-300"
+              }`}
                 onClick={() => navigate(action.path)}
               >
                 <Icon size={20} className={`text-${action.color}-600`} />
