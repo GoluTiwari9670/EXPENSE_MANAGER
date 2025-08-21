@@ -47,7 +47,13 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r from-${color}-500 to-${color}-600 flex items-center justify-center shadow-lg`}>
+        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${
+          color === "emerald" ? "bg-gradient-to-r from-emerald-500 to-emerald-600" :
+          color === "blue" ? "bg-gradient-to-r from-blue-500 to-blue-600" :
+          color === "purple" ? "bg-gradient-to-r from-purple-500 to-purple-600" :
+          color === "orange" ? "bg-gradient-to-r from-orange-500 to-orange-600" :
+          "bg-gradient-to-r from-slate-500 to-slate-600"
+        }`}>
           <Icon size={24} className="text-white" />
         </div>
       </div>
