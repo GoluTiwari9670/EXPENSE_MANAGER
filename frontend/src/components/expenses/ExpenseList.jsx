@@ -30,7 +30,7 @@ const ExpenseList = () => {
     let filtered = mockExpenses.filter(expense => {
       const matchesSearch = expense.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           expense.category.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = !selectedCategory || expense.categoryId === selectedCategory;
+      const matchesCategory = !selectedCategory || selectedCategory === 'all' || expense.categoryId === selectedCategory;
       return matchesSearch && matchesCategory;
     });
 
